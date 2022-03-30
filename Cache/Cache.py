@@ -1,4 +1,4 @@
-from MediaManger import FileMaker
+from MediaManager import FileMaker
 import json
 
 
@@ -14,7 +14,7 @@ class Cache:
             self._cache = json.load(file_to_load_from)
 
     async def save(self):
-        with open(str(self.file), 'w') as file_to_save_to:
+        async with open(str(self.file), 'w') as file_to_save_to:
             json.dump(self._cache, file_to_save_to, indent=4)
 
     @property

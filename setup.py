@@ -1,13 +1,14 @@
 from setuptools import setup
 
-requirements = []
+
 with open('requirements.txt') as f:
-  requirements = f.read().splitlines()
+    requirements = f.read().splitlines()
 
 setup(
     name='CacheGit',
     version='1.0.0',
     packages=['Cache'],
+    requirements=requirements,
     url='https://github.com/Mennocorn/CacheGit',
     license='MIT',
     author='Unicorn',
