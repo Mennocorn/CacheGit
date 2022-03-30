@@ -1,4 +1,3 @@
-HEAD
 from MediaManger import FileMaker
 import json
 
