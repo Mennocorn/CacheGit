@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='CacheGit',
     version='1.0.0',
-    packages=[''],
+    packages=['__init__'],
     url='',
     license='MIT',
     author='Unicorn',
