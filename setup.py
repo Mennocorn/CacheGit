@@ -3,8 +3,8 @@ from setuptools import setup
 setup(
     name='CacheGit',
     version='1.0.0',
-    packages=['src'],
-    url='',
+    py_modules=['src/'],
+    url='https://github.com/Mennocorn/CacheGit',
     license='MIT',
     author='Unicorn',
     author_email='kilian.wiendl@gmx.de',
