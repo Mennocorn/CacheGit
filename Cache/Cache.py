@@ -1,5 +1,6 @@
 from MediaManager import FileMaker
 import json
+from discord.ext import tasks
 
 
 class Cache:
@@ -14,8 +15,12 @@ class Cache:
             self._cache = json.load(file_to_load_from)
 
     async def save(self):
-        async with open(str(self.file), 'w') as file_to_save_to:
+        with open(str(self.file), 'w') as file_to_save_to:
             json.dump(self._cache, file_to_save_to, indent=4)
+
+    @tasks.loop(minutes=5)
+    async def automatic_save(self):
+        await self.save()
 
     @property
     def cache(self):
@@ -24,4 +29,3 @@ class Cache:
     @cache.setter
     def cache(self, value):
         self._cache = value
-
